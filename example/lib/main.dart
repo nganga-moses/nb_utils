@@ -17,7 +17,6 @@ void main() async {
 
   defaultToastBackgroundColor = Colors.black;
   defaultToastTextColor = Colors.white;
-  defaultToastGravityGlobal = ToastGravity.CENTER;
   defaultRadius = 16;
   defaultAppButtonRadius = 16;
 
@@ -501,7 +500,6 @@ class _HomePageState extends State<HomePage> {
                             'Toast',
                             borderRadius: BorderRadius.circular(1),
                             textColor: Colors.pinkAccent,
-                            gravity: ToastGravity.CENTER,
                           );
                         },
                       ),

@@ -7,7 +7,6 @@ import 'package:flutter/services.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 export 'package:connectivity_plus/connectivity_plus.dart';
-export 'package:fluttertoast/fluttertoast.dart';
 export 'package:shared_preferences/shared_preferences.dart';
 
 export 'src/customPaints/google_logo_painter.dart';
@@ -158,7 +157,6 @@ bool isMaskingEnabledGlobal = true;
 // Toast Config
 Color defaultToastBackgroundColor = Colors.grey.shade200;
 Color defaultToastTextColor = Colors.black;
-ToastGravity defaultToastGravityGlobal = ToastGravity.CENTER;
 BorderRadius defaultToastBorderRadiusGlobal = radius(30);
 
 PageRouteAnimation? pageRouteAnimationGlobal;

@@ -19,8 +19,6 @@ bool hasMatch(String? s, String p) {
 /// Toast for default time
 void toast(
   String? value, {
-  ToastGravity? gravity,
-  length = Toast.LENGTH_SHORT,
   Color? bgColor,
   Color? textColor,
   bool print = false,
@@ -28,13 +26,6 @@ void toast(
   if (value.validate().isEmpty || isLinux) {
     log(value);
   } else {
-    Fluttertoast.showToast(
-      msg: value.validate(),
-      gravity: gravity,
-      toastLength: length,
-      backgroundColor: bgColor ?? defaultToastBackgroundColor,
-      textColor: textColor ?? defaultToastTextColor,
-    );
     if (print) log(value);
   }
 }
@@ -43,8 +34,6 @@ void toast(
 void toasty(
   BuildContext context,
   String? text, {
-  ToastGravity? gravity,
-  length = Toast.LENGTH_SHORT,
   Color? bgColor,
   Color? textColor,
   bool print = false,
@@ -53,24 +42,6 @@ void toasty(
   BorderRadius? borderRadius,
   EdgeInsets? padding,
 }) {
-  FToast().init(context);
-  if (removeQueue) FToast().removeCustomToast();
-
-  FToast().showToast(
-    child: Container(
-      decoration: BoxDecoration(
-        color: bgColor ?? defaultToastBackgroundColor,
-        boxShadow: defaultBoxShadow(),
-        borderRadius: borderRadius ?? defaultToastBorderRadiusGlobal,
-      ),
-      padding:
-          padding ?? const EdgeInsets.symmetric(vertical: 16, horizontal: 30),
-      child: Text(text.validate(),
-          style: boldTextStyle(color: textColor ?? defaultToastTextColor)),
-    ),
-    gravity: gravity ?? defaultToastGravityGlobal,
-    toastDuration: duration,
-  );
   if (print) log(text);
 }
 
@@ -78,18 +49,14 @@ void toasty(
 void toastLong(
   String? value, {
   BuildContext? context,
-  ToastGravity gravity = ToastGravity.BOTTOM,
-  length = Toast.LENGTH_LONG,
   Color? bgColor,
   Color? textColor,
   bool print = false,
 }) {
   toast(
     value,
-    gravity: gravity,
     bgColor: bgColor,
     textColor: textColor,
-    length: length,
     print: print,
   );
 }
